@@ -55,7 +55,7 @@ const cardVariants = {
 
 export function AutomationFlow() {
   return (
-    <section className="relative min-h-[calc(100vh-80px)] flex flex-col pt-7 pb-10 lg:pt-11 lg:pb-14">
+    <section className="relative min-h-[calc(100vh-80px)] lg:min-h-195 min-[1200px]:min-h-[calc(100vh-80px)] flex flex-col pt-7 pb-10 lg:pt-8 min-[1200px]:pt-11 lg:pb-10 min-[1200px]:pb-14">
       {/* Inner wrapper stretches to fill remaining height, distributes 3 blocks evenly */}
       <div className="max-w-360 mx-auto px-6 sm:px-8 lg:px-10 xl:px-12 flex flex-col flex-1 -translate-y-3">
 
@@ -100,7 +100,7 @@ export function AutomationFlow() {
               key={step.step}
               variants={cardVariants}
               whileHover="hovered"
-              className="bg-slate-950/40 backdrop-blur-md border border-slate-800/60 rounded-2xl pt-3 px-8 pb-13 relative overflow-hidden flex flex-col min-h-60"
+              className="bg-slate-950/40 backdrop-blur-md border border-slate-800/60 rounded-2xl pt-3 px-6 pb-8 sm:px-8 sm:pb-13 relative overflow-hidden flex flex-col sm:min-h-60"
             >
               <span className="absolute top-4 right-5 text-7xl font-bold text-slate-800/30 z-0 select-none">
                 {step.step}
@@ -123,7 +123,7 @@ export function AutomationFlow() {
         </motion.div>
 
         {/* Timeline decorativ — same grid as cards, dots aligned per column */}
-        <div className="mt-8 lg:mt-10">
+        <div className="hidden lg:block lg:mt-10">
           <div className="relative grid grid-cols-4 gap-6">
             {/* Linia gradient — spans centrul col 1 → centrul col 4, ușor scurtată */}
             <div

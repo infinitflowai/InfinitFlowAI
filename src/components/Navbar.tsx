@@ -67,7 +67,7 @@ export function Navbar() {
 
           {/* Desktop nav */}
           <nav
-            className="hidden lg:flex items-center gap-0.5"
+            className="hidden lg:flex items-center gap-0 min-[1200px]:gap-0.5"
             onMouseLeave={() => setHoveredLink(null)}
           >
             {NAV_LINKS.map((link) => (
@@ -75,7 +75,7 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 onMouseEnter={() => setHoveredLink(link.href)}
-                className={`relative px-3 py-1.5 text-[15px] font-medium rounded-full transition-colors duration-200 ${
+                className={`relative px-2 py-1 text-[13px] min-[1200px]:px-3 min-[1200px]:py-1.5 min-[1200px]:text-[15px] font-medium rounded-full transition-colors duration-200 ${
                   isActive(link.href)
                     ? 'text-brand-cyan'
                     : hoveredLink === link.href
@@ -106,7 +106,7 @@ export function Navbar() {
           <div className="flex items-center gap-3">
             <Link
               href="/contact"
-              className="hidden sm:inline-flex items-center px-5 py-2.5 text-[15px] font-medium text-white rounded-xl transition-all duration-300 hover:brightness-110 hover:shadow-[0_0_20px_rgba(0,242,254,0.3)]"
+              className="hidden sm:inline-flex items-center px-3 py-1.5 text-[13px] min-[1200px]:px-5 min-[1200px]:py-2.5 min-[1200px]:text-[15px] font-medium text-white rounded-xl transition-all duration-300 hover:brightness-110 hover:shadow-[0_0_20px_rgba(0,242,254,0.3)]"
               style={{ background: 'linear-gradient(to right, #2563EB, #00f2fe)' }}
             >
               Consultanță Gratuită

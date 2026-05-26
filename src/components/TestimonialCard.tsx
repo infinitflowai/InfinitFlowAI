@@ -18,7 +18,7 @@ const cardVariants = {
 }
 
 const cardClass =
-  'bg-slate-950/40 backdrop-blur-md border border-slate-800/60 rounded-2xl p-9 relative overflow-hidden flex flex-col h-full transition-all duration-300 hover:border-[#00f2fe]/30 hover:shadow-[0_0_25px_rgba(0,242,254,0.08)] hover:-translate-y-1'
+  'bg-slate-950/40 backdrop-blur-md border border-slate-800/60 rounded-2xl p-6 sm:p-9 relative overflow-hidden flex flex-col h-full transition-all duration-300 hover:border-[#00f2fe]/30 hover:shadow-[0_0_25px_rgba(0,242,254,0.08)] hover:-translate-y-1'
 
 const iconWrapperClass =
   'w-14 h-14 text-[#00f2fe] bg-[#00f2fe]/5 p-3.5 rounded-full flex items-center justify-center mb-5 border border-[#00f2fe]/10 shrink-0'
@@ -31,7 +31,7 @@ const labelStyle = {
 
 export function TestimonialCard() {
   return (
-    <section className="relative min-h-[calc(100vh-80px)] flex flex-col justify-center pt-6 pb-14 lg:pt-8 lg:pb-16">
+    <section className="relative min-h-[calc(100vh-80px)] lg:min-h-170 min-[1200px]:min-h-[calc(100vh-80px)] flex flex-col justify-center pt-6 pb-14 lg:pt-8 lg:pb-10 min-[1200px]:pb-16">
       <div className="max-w-360 mx-auto px-6 sm:px-8 lg:px-10 xl:px-12">
 
         {/* Header */}

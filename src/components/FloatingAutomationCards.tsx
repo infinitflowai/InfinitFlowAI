@@ -55,7 +55,7 @@ const CARDS = [
     glow: 'rgba(0,200,255,0.14)',
     floatDuration: 3.8,
     floatDelay: 0.2,
-    desktopPos: 'md:top-2.5 md:left-0 lg:-left-12.5',
+    desktopPos: 'md:top-2.5 md:left-0 xl:-left-12.5',
   },
   {
     id: 'crm' as CardId,
@@ -67,7 +67,7 @@ const CARDS = [
     glow: 'rgba(45,143,255,0.14)',
     floatDuration: 4.1,
     floatDelay: 0.5,
-    desktopPos: 'md:top-2.5 md:right-0 lg:-right-12.5',
+    desktopPos: 'md:top-2.5 md:right-0 xl:-right-12.5',
   },
   {
     id: 'automation' as CardId,
@@ -79,7 +79,7 @@ const CARDS = [
     glow: 'rgba(26,79,214,0.18)',
     floatDuration: 3.5,
     floatDelay: 1.5,
-    desktopPos: 'md:bottom-2.5 md:left-0 lg:-left-12.5',
+    desktopPos: 'md:bottom-2.5 md:left-0 xl:-left-12.5',
   },
   {
     id: 'whatsapp' as CardId,
@@ -91,7 +91,7 @@ const CARDS = [
     glow: 'rgba(37,211,102,0.14)',
     floatDuration: 4.4,
     floatDelay: 0.9,
-    desktopPos: 'md:bottom-2.5 md:right-0 lg:-right-12.5',
+    desktopPos: 'md:bottom-2.5 md:right-0 xl:-right-12.5',
   },
 ]
 
@@ -196,7 +196,7 @@ export function FloatingAutomationCards() {
      *   mobile  — flex-col, h-auto; sphere + 2×2 card grid stack vertically
      *   desktop — fixed 500px height; sphere centered; cards absolute at 4 corners
      */
-    <div className="relative w-full flex flex-col items-center gap-6 md:h-150 md:justify-center md:gap-0">
+    <div className="relative w-full max-w-115 lg:max-w-2xl min-[1200px]:max-w-none flex flex-col items-center gap-6 md:h-115 lg:h-130 xl:h-150 md:justify-center md:gap-0">
 
       {/* ── Sphere ─────────────────────────────────────────────────────────── */}
       <motion.div
@@ -209,7 +209,7 @@ export function FloatingAutomationCards() {
           transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
         >
           {/* Sphere container — w-64 mobile, 460px desktop */}
-          <div className="relative w-64 h-64 md:w-115 md:h-115">
+          <div className="relative w-64 h-64 md:w-95 md:h-95 xl:w-115 xl:h-115">
 
             {/* Pulsing glow backdrop */}
             <motion.div
@@ -255,7 +255,7 @@ export function FloatingAutomationCards() {
             {/* Center orb — interactive content */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div
-                className="w-20 h-20 md:w-35 md:h-35 rounded-full flex items-center justify-center overflow-hidden"
+                className="w-20 h-20 md:w-28 md:h-28 xl:w-35 xl:h-35 rounded-full flex items-center justify-center overflow-hidden"
                 style={{
                   background:
                     'radial-gradient(circle at 38% 35%, rgba(210,245,255,0.98) 0%, rgba(0,190,230,0.9) 22%, rgba(0,110,160,0.95) 50%, rgba(3,13,20,1) 100%)',
@@ -314,7 +314,7 @@ export function FloatingAutomationCards() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="grid grid-cols-2 gap-3 w-full px-2
+        className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full px-2
                    md:absolute md:inset-0 md:grid-cols-1 md:px-0 md:pointer-events-none"
       >
         {CARDS.map((card) => (

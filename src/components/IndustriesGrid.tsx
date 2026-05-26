@@ -93,7 +93,7 @@ export function IndustriesGrid() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   return (
-    <section className="relative py-16 lg:py-24 bg-linear-to-b from-transparent via-brand-card/30 to-transparent">
+    <section className="relative py-16 lg:py-20 min-[1200px]:py-24 bg-linear-to-b from-transparent via-brand-card/30 to-transparent">
       <div className="max-w-360 mx-auto px-6 sm:px-8 lg:px-10 xl:px-12">
         <div className="w-full grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] items-center gap-12 lg:gap-16">
 
@@ -103,7 +103,7 @@ export function IndustriesGrid() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.7 }}
-            className="max-w-xl"
+            className="max-w-xl mx-auto lg:mx-0 w-full"
           >
             <span className="text-xs font-semibold tracking-widest text-[#00f2fe] uppercase block mb-5">
               UNDE PRODUCEM REZULTATE
