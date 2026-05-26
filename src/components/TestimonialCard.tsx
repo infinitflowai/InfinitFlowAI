@@ -31,7 +31,7 @@ const labelStyle = {
 
 export function TestimonialCard() {
   return (
-    <section className="relative min-h-[calc(100vh-80px)] lg:min-h-170 min-[1200px]:min-h-[calc(100vh-80px)] flex flex-col justify-center pt-6 pb-14 lg:pt-8 lg:pb-10 min-[1200px]:pb-16">
+    <section className="relative min-h-[calc(100vh-80px)] lg:min-h-170 min-[1200px]:min-h-[calc(100vh+320px)] flex flex-col justify-center pt-6 pb-14 lg:pt-8 lg:pb-10 min-[1200px]:pt-36 min-[1200px]:pb-64">
       <div className="max-w-360 mx-auto px-6 sm:px-8 lg:px-10 xl:px-12">
 
         {/* Header */}
