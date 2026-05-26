@@ -173,3 +173,14 @@ select:-webkit-autofill:focus {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ─── Desktop homepage section rhythm ───────────────────────── */
+/* Single rule controls vertical spacing for all homepage sections above 1280px.
+   To adjust desktop section padding, change the values here only. */
+@media (min-width: 1280px) {
+  .xl-section-flow > section {
+    min-height: 0;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}

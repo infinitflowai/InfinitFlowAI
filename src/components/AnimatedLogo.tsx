@@ -11,7 +11,7 @@ const INF_PATH =
   ' C 72 26 68 16 58 16 C 50 16 46 22 42 32' +
   ' C 38 42 34 50 24 50 C 14 50 8 42 8 32 Z'
 
-function InfinityMark({ idPrefix }: { idPrefix: string }) {
+function InfinityMark({ idPrefix, compact }: { idPrefix: string; compact: boolean }) {
   const gradId = `${idPrefix}InfGrad`
   const glowId = `${idPrefix}InfGlow`
   const flowId = `${idPrefix}FlowGlow`
@@ -30,7 +30,11 @@ function InfinityMark({ idPrefix }: { idPrefix: string }) {
         viewBox="8 14 64 36"
         fill="none"
         aria-hidden
-        className="block w-10.5 sm:w-13.5 lg:w-10.5 min-[1200px]:w-10.5"
+        className={
+          compact
+            ? 'block w-10.5 sm:w-13.5 lg:w-10.5 xl:w-13.5'
+            : 'block w-10.5 sm:w-13.5 lg:w-10.5 xl:w-13'
+        }
       >
         <defs>
           <linearGradient id={gradId} x1="0%" y1="0%" x2="100%" y2="100%">
@@ -86,7 +90,7 @@ function InfinityMark({ idPrefix }: { idPrefix: string }) {
   )
 }
 
-export function AnimatedLogo({ idPrefix = 'nav' }: { idPrefix?: string }) {
+export function AnimatedLogo({ idPrefix = 'nav', compact = false }: { idPrefix?: string; compact?: boolean }) {
   return (
     <div className="relative w-fit">
       {/* Outer glow ring — pulses */}
@@ -103,7 +107,11 @@ export function AnimatedLogo({ idPrefix = 'nav' }: { idPrefix?: string }) {
 
       {/* Card */}
       <div
-        className="relative flex items-center gap-2.5 sm:gap-3.5 lg:gap-2.5 min-[1200px]:gap-4 px-4 sm:px-6 lg:px-4 min-[1200px]:px-8 py-3 sm:py-4.5 lg:py-3 min-[1200px]:py-5 rounded-2xl overflow-hidden"
+        className={`relative flex items-center rounded-2xl overflow-hidden ${
+          compact
+            ? 'gap-2.5 sm:gap-3.5 lg:gap-2.5 xl:gap-3.5 px-4 sm:px-6 lg:px-4 xl:px-5 py-3 sm:py-4.5 lg:py-3 xl:py-4.5'
+            : 'gap-2.5 sm:gap-3.5 lg:gap-2.5 xl:gap-4 px-4 sm:px-6 lg:px-4 xl:px-8 py-3 sm:py-4.5 lg:py-3 xl:py-6'
+        }`}
         style={{
           background: 'rgba(6,26,36,0.9)',
           border: '1px solid rgba(0,200,255,0.24)',
@@ -131,16 +139,24 @@ export function AnimatedLogo({ idPrefix = 'nav' }: { idPrefix?: string }) {
           }}
         />
 
-        <InfinityMark idPrefix={idPrefix} />
+        <InfinityMark idPrefix={idPrefix} compact={compact} />
 
         <div
-          className="h-5 sm:h-6 lg:h-5 min-[1200px]:h-7 w-px shrink-0"
+          className={
+            compact
+              ? 'h-5 sm:h-6 lg:h-5 xl:h-6 w-px shrink-0'
+              : 'h-5 sm:h-6 lg:h-5 xl:h-7.5 w-px shrink-0'
+          }
           style={{ background: 'rgba(0,200,255,0.2)' }}
         />
 
         <div className="flex items-center" style={{ gap: '2px', lineHeight: 1 }}>
           <span
-            className="font-bold text-[1.1rem] sm:text-[1.35rem] lg:text-[1.1rem] min-[1200px]:text-[1.33rem] text-brand-silver select-none"
+            className={`font-bold text-brand-silver select-none ${
+              compact
+                ? 'text-[1.1rem] sm:text-[1.35rem] lg:text-[1.1rem] xl:text-[1.25rem]'
+                : 'text-[1.1rem] sm:text-[1.35rem] lg:text-[1.1rem] xl:text-[1.45rem]'
+            }`}
             style={{ letterSpacing: '-0.02em' }}
           >
             InfinitFlow
@@ -157,11 +173,23 @@ export function AnimatedLogo({ idPrefix = 'nav' }: { idPrefix?: string }) {
               marginRight: '1px',
             }}
           >
-            <Cog size={20} strokeWidth={2.1} className="text-brand-cyan w-5 h-5 min-[1200px]:w-5.75 min-[1200px]:h-5.75" />
+            <Cog
+              size={20}
+              strokeWidth={2.1}
+              className={
+                compact
+                  ? 'text-brand-cyan w-5 h-5 xl:w-5.25 xl:h-5.25'
+                  : 'text-brand-cyan w-5 h-5 xl:w-5.75 xl:h-5.75'
+              }
+            />
           </motion.span>
 
           <span
-            className="font-bold text-[1.1rem] sm:text-[1.35rem] lg:text-[1.1rem] min-[1200px]:text-[1.33rem] select-none"
+            className={`font-bold select-none ${
+              compact
+                ? 'text-[1.1rem] sm:text-[1.35rem] lg:text-[1.1rem] xl:text-[1.25rem]'
+                : 'text-[1.1rem] sm:text-[1.35rem] lg:text-[1.1rem] xl:text-[1.45rem]'
+            }`}
             style={{
               letterSpacing: '-0.02em',
               background: 'linear-gradient(135deg,#2D8FFF,#00C8FF)',

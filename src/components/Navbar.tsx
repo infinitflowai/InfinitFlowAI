@@ -58,7 +58,7 @@ export function Navbar() {
     >
       <div className="max-w-360 mx-auto px-6 sm:px-8 lg:px-10 xl:px-12">
         {/* Header row — taller to accommodate the animated card */}
-        <div className="flex items-center justify-between h-19 lg:h-23">
+        <div className="flex items-center justify-between h-19 lg:h-23 xl:h-25">
 
           {/* Animated brand card as logo */}
           <Link href="/" className="shrink-0" aria-label="InfinitFlowAI — pagina principală">

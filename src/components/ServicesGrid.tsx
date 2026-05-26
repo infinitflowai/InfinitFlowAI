@@ -55,7 +55,7 @@ const cardVariants = {
 
 export function ServicesGrid() {
   return (
-    <section className="relative pt-9 md:pt-5 min-[1200px]:pt-12 pb-12 min-[1200px]:pb-16">
+    <section className="relative pt-9 md:pt-5 pb-12">
       <div className="max-w-360 mx-auto px-6 sm:px-8 lg:px-10 xl:px-12">
 
         {/* Header */}

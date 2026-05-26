@@ -66,7 +66,7 @@ export function Footer() {
           {/* ── Brand ──────────────────────────────────────── */}
           <div>
             <Link href="/" className="block w-fit" aria-label="InfinitFlowAI — pagina principală">
-              <AnimatedLogo idPrefix="footer" />
+              <AnimatedLogo idPrefix="footer" compact />
             </Link>
 
             <p className="text-sm leading-snug text-slate-400 max-w-sm mt-3">

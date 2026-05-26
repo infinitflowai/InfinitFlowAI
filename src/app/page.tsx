@@ -24,18 +24,20 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <MobileDivider />
-      <ServicesGrid />
-      <MobileDivider />
-      <IndustriesGrid />
-      <MobileDivider />
-      <AutomationFlow />
-      <MobileDivider />
-      <PortfolioCards />
-      <MobileDivider />
-      <TestimonialCard />
-      <MobileDivider />
-      <CTASection sectionClassName="min-h-screen lg:min-h-140 min-[1200px]:min-h-screen flex flex-col justify-center py-20 lg:py-16 min-[1200px]:py-24" />
+      <div className="xl-section-flow">
+        <MobileDivider />
+        <ServicesGrid />
+        <MobileDivider />
+        <IndustriesGrid />
+        <MobileDivider />
+        <AutomationFlow />
+        <MobileDivider />
+        <PortfolioCards />
+        <MobileDivider />
+        <TestimonialCard />
+        <MobileDivider />
+        <CTASection sectionClassName="min-h-screen lg:min-h-140 flex flex-col justify-center xl:justify-start py-20 lg:py-16" />
+      </div>
     </>
   )
 }
