@@ -1,0 +1,45 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(Start-Sleep -Seconds 8)",
+      "Bash(Get-Content \"C:\\\\Users\\\\Admin\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Admin-Desktop-infinitflowai\\\\0f714561-50e1-4fb3-a536-079c1102253e\\\\tasks\\\\bg8xmwoz3.output\" -Tail 20)",
+      "Bash(node -e ' *)",
+      "Bash(cd /tmp)",
+      "Bash(npx playwright *)",
+      "Bash(ls /tmp/*.png)",
+      "Read(//c//**)",
+      "Bash(find /tmp -name \"hero.png\")",
+      "Bash(node -e \"const p = require\\('./package.json'\\); console.log\\('next:', p.dependencies.next\\)\")",
+      "Bash(dir \"C:\\\\Users\\\\Admin\\\\Desktop\\\\infinitflowai\\\\node_modules\\\\next\\\\dist\\\\docs\\\\01-app\\\\03-api-reference\\\\04-functions\")",
+      "Bash(findstr /i \"path\")",
+      "Bash(Select-String \"path\" -i)",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\Admin\\\\Desktop\\\\infinitflowai\\\\node_modules\\\\next\\\\dist\\\\docs\\\\01-app\\\\03-api-reference\\\\04-functions\" | Where-Object { $_.Name -match \"path\" })",
+      "Bash(npx next *)",
+      "Bash(node_modules\\\\.bin\\\\next dev *)",
+      "Bash(timeout 8)",
+      "Bash(curl -s http://localhost:3000/servicii -o -)",
+      "Bash(findstr \"text-brand-cyan\\\\|bg-brand-navy\")",
+      "Bash(curl -s http://localhost:3001/servicii)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
+      "Bash(npx tsc *)",
+      "Bash(curl -s -o NUL -w \"%{http_code}\" http://localhost:3000)",
+      "WebFetch(domain:localhost)",
+      "PowerShell(Invoke-WebRequest -Uri \"http://localhost:3000\" -UseBasicParsing)",
+      "PowerShell(taskkill /PID 16472 /F)",
+      "Bash(powershell -Command \"Get-Content 'C:\\\\Users\\\\Admin\\\\.claude\\\\projects\\\\c--Users-Admin-Desktop-infinitflowai\\\\0f714561-50e1-4fb3-a536-079c1102253e.jsonl' | Select-Object -Last 100\")",
+      "Bash(dir /B /O-D \"C:\\\\Users\\\\Admin\\\\Desktop\\\\infinitflowai\\\\src\\\\components\")",
+      "Bash(timeout 8 && type \"C:\\\\Users\\\\Admin\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Admin-Desktop-infinitflowai\\\\0f714561-50e1-4fb3-a536-079c1102253e\\\\tasks\\\\b1cw6bhrk.output\" 2>nul)",
+      "Bash(Remove-Item -Recurse -Force .next -ErrorAction SilentlyContinue)",
+      "Bash(Write-Output \"Cache sters\")",
+      "PowerShell(cd \"C:\\\\Users\\\\Admin\\\\Desktop\\\\infinitflowai\"; $job = Start-Job { cd \"C:\\\\Users\\\\Admin\\\\Desktop\\\\infinitflowai\"; npm run dev 2>&1 }; Start-Sleep -Seconds 15; Receive-Job $job; Stop-Job $job; Remove-Job $job)",
+      "PowerShell(Start-Sleep -Seconds 3; try { $r = Invoke-WebRequest -Uri \"http://localhost:3001\" -TimeoutSec 10 -UseBasicParsing; \"HOME: $\\($r.StatusCode\\)\" } catch { \"HOME ERROR: $\\($_.Exception.Message\\)\" }; try { $r = Invoke-WebRequest -Uri \"http://localhost:3001/contact\" -TimeoutSec 10 -UseBasicParsing; \"CONTACT: $\\($r.StatusCode\\)\" } catch { \"CONTACT ERROR: $\\($_.Exception.Message\\)\" }; try { $r = Invoke-WebRequest -Uri \"http://localhost:3001/servicii\" -TimeoutSec 10 -UseBasicParsing; \"SERVICII: $\\($r.StatusCode\\)\" } catch { \"SERVICII ERROR: $\\($_.Exception.Message\\)\" })",
+      "PowerShell(@\\(\"http://localhost:3000\", \"http://localhost:3000/contact\", \"http://localhost:3000/despre-noi\", \"http://localhost:3000/servicii\", \"http://localhost:3000/cum-functioneaza\"\\) | ForEach-Object { try { $r = Invoke-WebRequest -Uri $_ -TimeoutSec 8 -UseBasicParsing; \"$_`: $\\($r.StatusCode\\)\" } catch { \"$_`: EROARE - $\\($_.Exception.Message.Substring\\(0, [Math]::Min\\(80,$_.Exception.Message.Length\\)\\)\\)\" } })",
+      "PowerShell(try { $r = Invoke-WebRequest -Uri \"http://localhost:3000\" -TimeoutSec 10 -UseBasicParsing; $r.Content.Substring\\(0, 500\\) } catch { $_.Exception.Response })",
+      "Bash(Write-Host \"Cache cleared\")"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\Admin\\Desktop\\infinitflowai"
+    ]
+  }
+}

@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-bg: #030D14;
+  --color-brand-card: #061A24;
+  --color-brand-navy: #004D5E;
+  --color-brand-blue: #2D8FFF;
+  --color-brand-deep: #1A4FD6;
+  --color-brand-silver: #C8D0DC;
+  --color-brand-muted: #7A8899;
+  --color-brand-cyan: #00C8FF;
+  --font-sans: var(--font-inter);
+}
+
+/* ─── Base ─────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #030D14;
+  color: #C8D0DC;
+  overflow-x: hidden;
+}
+
+/* ─── Keyframes ─────────────────────────────────────────────── */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; filter: blur(12px); }
+  50%       { opacity: 0.9; filter: blur(6px); }
+}
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-14px); }
+}
+
+@keyframes ray-fade {
+  0%   { opacity: 0; transform: scaleX(0.6) scaleY(0.8); }
+  30%  { opacity: 0.35; }
+  70%  { opacity: 0.35; }
+  100% { opacity: 0; transform: scaleX(1.3) scaleY(1.2); }
+}
+
+@keyframes shimmer-text {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes gradient-flow {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes slide-in-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blink-dot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.2; }
+}
+
+/* ─── Utility classes ─────────────────────────────────────── */
+.animate-pulse-glow   { animation: pulse-glow 4s ease-in-out infinite; }
+.animate-float-y      { animation: float-y 5s ease-in-out infinite; }
+.animate-ray-fade     { animation: ray-fade 8s ease-in-out infinite; }
+.animate-gradient     { animation: gradient-flow 6s ease infinite; }
+.animate-spin-slow    { animation: spin-slow 20s linear infinite; }
+.animate-slide-in-up  { animation: slide-in-up 0.6s ease forwards; }
+.animate-blink        { animation: blink-dot 1.2s ease-in-out infinite; }
+
+.glow-blue { box-shadow: 0 0 24px rgba(45, 143, 255, 0.45); }
+.glow-cyan { box-shadow: 0 0 24px rgba(0, 200, 255, 0.45); }
+.glow-strong { box-shadow: 0 0 48px rgba(0, 200, 255, 0.6), 0 0 24px rgba(45, 143, 255, 0.4); }
+
+.text-gradient-blue {
+  background: linear-gradient(135deg, #2D8FFF 0%, #00C8FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-silver {
+  background: linear-gradient(135deg, #C8D0DC 0%, #7A8899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #1A4FD6, #2D8FFF);
+  background-size: 200% auto;
+  color: white;
+  border: none;
+  transition: background-position 0.4s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+.btn-primary:hover {
+  background-position: right center;
+  box-shadow: 0 0 28px rgba(45, 143, 255, 0.55);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #C8D0DC;
+  border: 1px solid rgba(45, 143, 255, 0.4);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+.btn-outline:hover {
+  border-color: rgba(0, 200, 255, 0.7);
+  box-shadow: 0 0 18px rgba(0, 200, 255, 0.2);
+  color: #00C8FF;
+  transform: translateY(-2px);
+}
+
+.card-glass {
+  background: rgba(6, 26, 36, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 200, 255, 0.08);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+.card-glass:hover {
+  border-color: rgba(0, 200, 255, 0.28);
+  box-shadow: 0 0 32px rgba(0, 200, 255, 0.1);
+  transform: translateY(-4px);
+}
+
+.section-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #2D8FFF, #00C8FF);
+  border-radius: 2px;
+}
+
+/* ─── Autofill override (Chrome/Safari) ────────────────────── */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #ffffff !important;
+  -webkit-box-shadow: 0 0 0px 1000px rgba(2, 6, 23, 0.92) inset !important;
+  transition: background-color 9999s ease-in-out 0s !important;
+  caret-color: #ffffff !important;
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #030D14; }
+::-webkit-scrollbar-thumb { background: #004D5E; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #2D8FFF; }
+
+/* ─── Selection ─────────────────────────────────────────────── */
+::selection { background: rgba(45, 143, 255, 0.3); color: #C8D0DC; }
+
+/* ─── Focus ring ─────────────────────────────────────────────── */
+:focus-visible { outline: 2px solid #2D8FFF; outline-offset: 3px; }
+
+/* ─── Reduce motion ─────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
