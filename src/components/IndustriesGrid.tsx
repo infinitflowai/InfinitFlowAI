@@ -94,7 +94,7 @@ export function IndustriesGrid() {
 
   return (
     <section className="relative py-16 lg:py-20 bg-linear-to-b from-transparent via-brand-card/30 to-transparent">
-      <div className="max-w-360 mx-auto px-6 sm:px-8 lg:px-10 xl:px-12">
+      <div className="max-w-360 mx-auto px-6 sm:px-8 lg:px-10 xl:px-12 xl:mt-16 xl:-mb-16">
         <div className="w-full grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] items-center gap-12 lg:gap-16">
 
           {/* Left */}

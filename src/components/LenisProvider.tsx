@@ -9,6 +9,9 @@ export function LenisProvider({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
 
   useEffect(() => {
+    // Native scroll is faster on mobile — skip Lenis below 768px
+    if (window.matchMedia('(max-width: 767px)').matches) return
+
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),

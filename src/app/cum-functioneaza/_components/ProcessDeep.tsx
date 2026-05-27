@@ -71,7 +71,7 @@ const cardHoverVariants = {
 
 export function ProcessDeep() {
   return (
-    <section className="relative pt-16 pb-10 lg:pt-20 lg:pb-18 bg-linear-to-b from-transparent via-brand-card/20 to-transparent">
+    <section className="relative pt-32 pb-10 lg:pb-18 bg-linear-to-b from-transparent via-brand-card/20 to-transparent">
 
       {/* Glow decorativ */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none -z-10">
@@ -117,7 +117,7 @@ export function ProcessDeep() {
               key={d.title}
               variants={cardVariants}
               whileHover="hovered"
-              className="bg-slate-950/40 backdrop-blur-md rounded-2xl p-6 border border-slate-800/60 relative overflow-hidden flex flex-col"
+              className="bg-transparent rounded-2xl p-6 border border-slate-800/60 relative overflow-hidden flex flex-col"
             >
               {/* Număr mare discret */}
               <motion.span
@@ -148,13 +148,13 @@ export function ProcessDeep() {
                 >
                   <d.icon size={20} className="text-[#00f2fe]" />
                 </motion.div>
-                <h3 className="text-white font-semibold">{d.title}</h3>
+                <h3 className="text-lg text-white font-semibold">{d.title}</h3>
               </div>
 
               {/* Bullet points */}
               <ul className="space-y-2.5 relative z-10">
                 {d.points.map((p) => (
-                  <li key={p} className="flex items-start gap-2.5 text-sm text-slate-400 leading-relaxed">
+                  <li key={p} className="flex items-start gap-2.5 text-base text-slate-400 leading-relaxed">
                     <span className="mt-[7px] w-1.5 h-1.5 rounded-full flex-shrink-0 bg-[#00f2fe]/55" />
                     {p}
                   </li>

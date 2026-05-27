@@ -1,9 +1,11 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import {
   Cross, Scissors, Cake, Flower2, UtensilsCrossed,
   Car, ShoppingBag, Store, PawPrint, Dumbbell, Building2, Briefcase,
+  ChevronDown,
 } from 'lucide-react'
 import Link from 'next/link'
 
@@ -119,67 +121,126 @@ const INDUSTRIES = [
 ]
 
 export function IndustryDetails() {
+  const [openId, setOpenId] = useState<string | null>(null)
+
+  const toggle = (id: string) =>
+    setOpenId((prev) => (prev === id ? null : id))
+
   return (
     <section className="pt-4 pb-16 lg:pt-5 lg:pb-24">
-      <div className="max-w-360 mx-auto px-6 sm:px-8 lg:px-10 xl:px-12 space-y-6">
-        {INDUSTRIES.map((ind, i) => (
-          <motion.div
-            key={ind.id}
-            id={ind.id}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.6, delay: i * 0.05 }}
-            className="bg-slate-950/40 backdrop-blur-md border border-slate-800/60 rounded-2xl p-6 lg:p-8 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#00f2fe]/40 hover:shadow-[0_0_20px_rgba(0,242,254,0.08)]"
-          >
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-10">
-
-              {/* Left: title */}
-              <div className="flex flex-col gap-4">
+      <div className="max-w-360 mx-auto px-6 sm:px-8 lg:px-10 xl:px-12 space-y-3">
+        {INDUSTRIES.map((ind, i) => {
+          const isOpen = openId === ind.id
+          return (
+            <motion.div
+              key={ind.id}
+              id={ind.id}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.5, delay: i * 0.04 }}
+              animate={{
+                borderColor: isOpen ? '#2D8FFF' : 'rgba(30,41,59,0.6)',
+                boxShadow: isOpen
+                  ? '0 0 24px rgba(45,143,255,0.14)'
+                  : '0 0 0px rgba(45,143,255,0)',
+              }}
+              className="rounded-2xl border overflow-hidden"
+              style={{ background: 'rgba(2,6,23,0.45)' }}
+            >
+              {/* Rând închis: icon + titlu + chevron */}
+              <button
+                onClick={() => toggle(ind.id)}
+                className="w-full flex items-center gap-4 px-6 py-5 text-left cursor-pointer group"
+              >
                 <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center"
-                  style={{ background: `${ind.color}15`, border: `1px solid ${ind.color}25` }}
+                  className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all duration-200 group-hover:scale-105"
+                  style={{
+                    background: `${ind.color}18`,
+                    border: `1px solid ${ind.color}30`,
+                  }}
                 >
-                  <ind.icon size={22} style={{ color: ind.color }} />
+                  <ind.icon size={19} style={{ color: ind.color }} />
                 </div>
-                <h2 className="text-white font-bold text-xl">{ind.title}</h2>
-                <Link
-                  href="#solutii-contact"
-                  className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-white rounded-lg btn-primary self-start"
-                >
-                  Vreau această soluție
-                </Link>
-              </div>
 
-              {/* Middle: problem → solution */}
-              <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <p className="text-brand-muted text-xs uppercase tracking-wider font-semibold mb-2">
-                    Problema
-                  </p>
-                  <p className="text-brand-silver text-sm leading-relaxed">{ind.pain}</p>
-                </div>
-                <div>
-                  <p className="text-brand-cyan text-xs uppercase tracking-wider font-semibold mb-2">
-                    Soluția noastră
-                  </p>
-                  <p className="text-brand-silver text-sm leading-relaxed mb-4">{ind.solution}</p>
-                  <div className="flex flex-col gap-2">
-                    {ind.results.map((r) => (
-                      <div key={r} className="flex items-center gap-2 text-xs text-brand-silver">
-                        <div
-                          className="w-1.5 h-1.5 rounded-full flex-shrink-0"
-                          style={{ background: ind.color }}
-                        />
-                        {r}
+                <span className="flex-1 text-white font-semibold text-xl leading-snug">
+                  {ind.title}
+                </span>
+
+                <motion.div
+                  animate={{ rotate: isOpen ? 180 : 0 }}
+                  transition={{ duration: 0.28, ease: 'easeOut' }}
+                  className="shrink-0"
+                >
+                  <ChevronDown
+                    size={20}
+                    className="text-slate-400 group-hover:text-slate-200 transition-colors duration-200"
+                  />
+                </motion.div>
+              </button>
+
+              {/* Conținut expandabil */}
+              <AnimatePresence initial={false}>
+                {isOpen && (
+                  <motion.div
+                    key="content"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.32, ease: 'easeOut' }}
+                    style={{ overflow: 'hidden' }}
+                  >
+                    <div className="px-6 py-8 border-t border-slate-800/50">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-10">
+
+                        {/* Problema */}
+                        <div>
+                          <p className="text-brand-muted text-sm font-bold tracking-widest uppercase mb-3">
+                            Problema
+                          </p>
+                          <p className="text-brand-silver text-lg leading-relaxed">
+                            {ind.pain}
+                          </p>
+                        </div>
+
+                        {/* Soluția + beneficii + buton */}
+                        <div>
+                          <p className="text-brand-cyan text-sm font-bold tracking-widest uppercase mb-3">
+                            Soluția noastră
+                          </p>
+                          <p className="text-brand-silver text-lg leading-relaxed mb-5">
+                            {ind.solution}
+                          </p>
+                          <div className="flex flex-col gap-2.5 mb-6">
+                            {ind.results.map((r) => (
+                              <div
+                                key={r}
+                                className="flex items-center gap-2 text-base text-brand-silver"
+                              >
+                                <div
+                                  className="w-1.5 h-1.5 rounded-full shrink-0"
+                                  style={{ background: ind.color }}
+                                />
+                                {r}
+                              </div>
+                            ))}
+                          </div>
+                          <Link
+                            href="#solutii-contact"
+                            className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-white rounded-lg btn-primary"
+                          >
+                            Vreau această soluție
+                          </Link>
+                        </div>
+
                       </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          )
+        })}
       </div>
     </section>
   )

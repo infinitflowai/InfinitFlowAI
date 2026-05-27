@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function SolutiiPage() {
   return (
     <div className="pt-20">
-      <section className="pt-5 pb-3 lg:pt-7 lg:pb-4 text-center relative overflow-hidden">
+      <section className="pt-10 pb-3 lg:pt-10 lg:pb-4 text-center relative overflow-hidden">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -31,7 +31,7 @@ export default function SolutiiPage() {
             Fiecare industrie are provocări specifice. Noi le cunoaștem și construim soluții care se
             potrivesc exact cu nevoile tale.
           </p>
-          <p className="mt-3 text-sm text-slate-300/80 max-w-lg mx-auto">
+          <p className="mt-3 text-lg text-brand-muted max-w-lg mx-auto">
             Alege domeniul tău sau explorează exemplele de mai jos.
           </p>
           <div
@@ -47,7 +47,7 @@ export default function SolutiiPage() {
       <CTASection
         title="Nu îți vezi domeniul în listă?"
         subtitle="Spune-ne cum funcționează afacerea ta și îți arătăm ce procese pot fi automatizate."
-        sectionClassName="min-h-screen flex flex-col justify-center pt-16 pb-32 lg:pt-20 lg:pb-40"
+        sectionClassName="min-h-screen flex flex-col items-center justify-center"
       />
     </div>
   )

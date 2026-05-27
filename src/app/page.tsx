@@ -36,7 +36,7 @@ export default function HomePage() {
         <MobileDivider />
         <TestimonialCard />
         <MobileDivider />
-        <CTASection sectionClassName="min-h-screen lg:min-h-140 flex flex-col justify-center xl:justify-start py-20 lg:py-16" />
+        <CTASection sectionClassName="min-h-screen lg:min-h-140 flex flex-col justify-center xl:justify-start py-20 lg:py-16 xl:pt-24!" />
       </div>
     </>
   )

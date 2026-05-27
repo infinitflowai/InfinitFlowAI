@@ -158,7 +158,7 @@ export function ServiceDetails() {
                   border: `1px solid ${s.color}14`,
                 }}
               >
-                <s.icon size={56} style={{ color: s.color, opacity: 0.28 }} />
+                <s.icon size={56} style={{ color: s.color, opacity: 0.4, filter: `drop-shadow(0 0 12px ${s.color})` }} />
               </div>
 
             </div>

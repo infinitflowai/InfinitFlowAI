@@ -77,7 +77,7 @@ const arrowVariants = {
 export function PortfolioCards() {
   return (
     <section className="relative min-h-[calc(100vh-96px)] lg:min-h-190 flex flex-col pt-14 pb-12 md:pt-16 lg:pt-10 md:pb-7 lg:pb-7">
-      <div className="w-full max-w-360 mx-auto px-6 sm:px-8 lg:px-10 xl:px-12 flex flex-col flex-1 translate-y-10 xl:translate-y-0">
+      <div className="w-full max-w-360 mx-auto px-6 sm:px-8 lg:px-10 xl:px-12 flex flex-col flex-1 pt-24 translate-y-10 xl:translate-y-0">
 
         {/* Header */}
         <motion.div
