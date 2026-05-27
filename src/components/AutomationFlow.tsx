@@ -57,7 +57,7 @@ export function AutomationFlow() {
   return (
     <section className="relative min-h-[calc(100vh-80px)] lg:min-h-195 flex flex-col pt-7 pb-10 lg:pt-8 lg:pb-10">
       {/* Inner wrapper stretches to fill remaining height, distributes 3 blocks evenly */}
-      <div className="max-w-360 mx-auto px-6 sm:px-8 lg:px-10 xl:px-12 flex flex-col flex-1 xl:flex-none pt-8 -translate-y-3 xl:translate-y-0">
+      <div className="max-w-360 mx-auto px-6 sm:px-8 lg:px-10 xl:px-12 flex flex-col flex-1 xl:flex-none -translate-y-3 xl:translate-y-0">
 
         {/* Block 1 — Introducere */}
         <motion.div
@@ -65,7 +65,7 @@ export function AutomationFlow() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.7 }}
-          className="text-center pt-7"
+          className="text-center pt-8"
         >
           <span className="text-xs font-semibold tracking-widest text-[#00f2fe] uppercase text-center block mb-2">
             PAS CU PAS SPRE REZULTATE

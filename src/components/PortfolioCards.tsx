@@ -77,7 +77,7 @@ const arrowVariants = {
 export function PortfolioCards() {
   return (
     <section className="relative min-h-[calc(100vh-96px)] lg:min-h-190 flex flex-col pt-14 pb-12 md:pt-16 lg:pt-10 md:pb-7 lg:pb-7">
-      <div className="w-full max-w-360 mx-auto px-6 sm:px-8 lg:px-10 xl:px-12 flex flex-col flex-1 pt-24 translate-y-10 xl:translate-y-0">
+      <div className="w-full max-w-360 mx-auto px-6 sm:px-8 lg:px-10 xl:px-12 flex flex-col flex-1 pt-4 translate-y-10 xl:translate-y-0">
 
         {/* Header */}
         <motion.div
@@ -101,7 +101,7 @@ export function PortfolioCards() {
         </motion.div>
 
         {/* Cards — relative wrapper holds the decorative glow */}
-        <div className="relative mt-8 md:mt-10 isolate">
+        <div className="relative mt-16 isolate">
 
           {/* Decorative glow behind center card */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none -z-10">
@@ -109,7 +109,7 @@ export function PortfolioCards() {
           </div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch"
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch"
             variants={cardContainerVariants}
             initial="hidden"
             whileInView="visible"
@@ -187,7 +187,7 @@ export function PortfolioCards() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3, ease: 'easeOut' }}
-          className="text-center py-5 md:py-6"
+          className="text-center py-5 md:py-6 mt-12"
         >
           <div className="w-16 h-px bg-[#00f2fe]/40 mx-auto mb-4" />
           <p className="text-slate-400 text-sm md:text-base max-w-3xl mx-auto leading-relaxed">
